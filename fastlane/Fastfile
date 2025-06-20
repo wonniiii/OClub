@@ -1,0 +1,26 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Build and upload to TestFlight"
+lane :beta do
+  build_app(
+    scheme: "O'Club",
+    output_name: "OClub.ipa",
+    export_method: "app-store",
+    export_options: {
+      provisioningProfiles: {
+        "wonni.O-Club" => "O-Club"
+      }
+    }
+  )
+
+ upload_to_testflight(
+  api_key: app_store_connect_api_key(
+    key_id: "NS586XBZ5K",
+    issuer_id: "18f2f1ea-df40-4e49-9c8d-b9b8ae09b29f",
+    key_filepath: "fastlane/private_keys/AuthKey_NS586XBZ5K.p8"
+  )
+)
+
+end
+end

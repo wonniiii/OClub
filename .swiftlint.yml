@@ -1,0 +1,28 @@
+included:
+  - OClub/
+
+excluded:
+  - OClub.xcodeproj
+  - .bundle
+  - vendor
+  - Pods
+  - Carthage
+  - fastlane
+  - build
+  - DerivedData
+  - .git
+  - .github
+  - swift/
+
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - type_name
+
+opt_in_rules:
+  - explicit_init
+  - empty_count
+
+reporter: xcode
+
+
